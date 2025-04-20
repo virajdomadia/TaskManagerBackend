@@ -12,6 +12,7 @@ router.post("/", authMiddleware, async (req, res) => {
       description,
       status = "pending",
       priority = "low",
+      dueDate,
     } = req.body;
 
     if (!title || !description) {
@@ -26,6 +27,7 @@ router.post("/", authMiddleware, async (req, res) => {
       description,
       status,
       priority,
+      dueDate,
     });
 
     res.status(201).json(task);
